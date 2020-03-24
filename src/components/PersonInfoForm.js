@@ -1,17 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useInputChange } from '../helperFunctions/useInputChange';
 
-function PersonInfoForm() {
-  const [input, setInput] = useState({
+function PersonInfoForm() {  
+  
+  const [input, handleInputChange] = useInputChange({
     name: "",
     age: ""
   });
-
-  function handleInputChange(event) {
-    setInput({
-      ...input,
-      [event.target.name]: event.target.value
-    });
-  }
 
   return (
     <>
